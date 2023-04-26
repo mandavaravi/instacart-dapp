@@ -1,0 +1,38 @@
+<div class="container">
+    <h3 class="my-4">Item Details</h3>
+    <div class="row border" style="height:400px">
+      
+      <div class="col-6 ">
+        <div class="image mx-2 my-2" >
+          <img class="img-fluid "
+               [src]="item?.itemImage"
+               [alt]="item?.itemName" />
+
+              <div class="overlay">
+                 <div class="btnalign">
+                <button 
+                type="button" 
+                class="btn btn-primary w-100"
+                (click)="addToCart(item)">Add To Cart</button>
+                </div>
+              </div>
+        </div>
+      </div>
+      <div class="col-6 ">
+        <div class="w-100 mx-2 my-2">
+            <h2>Name: {{ item?.itemName }}</h2>          
+            <h4>Price: {{ item?.itemPrice }}</h4>
+            <h4>Description: {{ item?.itemDescription }}</h4>
+            <h5>Stock: {{ item?.itemStock }}</h5>
+            <h5>Category: {{ item?.subCategory.category.categoryName }}</h5>
+            <h6>Sub-category: {{ item?.subCategory.subCategoryName }}</h6>
+            <h6>GST%: {{ item?.subCategory.subCategoryGst }}</h6>
+            <button 
+                type="button" 
+                class="btn btn-outline-primary"
+                (click)="addToCart(item)">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+</div>
+

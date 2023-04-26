@@ -1,0 +1,33 @@
+.img-size{
+    height: 200px;
+    width: 100%;
+}
+.card-size{
+    height:400px;
+    width: 220px;
+}
+
+.card-hover:hover{
+    box-shadow: 10px 14px 18px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.089);
+}
+
+.btn:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-hover .reveal {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    
+}
+
+.card-hover:hover .reveal {
+    height: auto;
+    visibility: visible;
+    opacity: 10;
+    transition: opacity 1s ease;
+    
+}

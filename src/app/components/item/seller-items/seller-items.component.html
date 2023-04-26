@@ -1,0 +1,61 @@
+
+<div class="container mt-3">
+    <div class="row">
+
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="card p-2 " >
+              <button type="button" 
+                      class="btn btn-secondary card-block stretched-link text-decoration-none  p-5" 
+                      (click)="addItem()" >
+                      <i class="material-icons float-  p-5 ">add_circle_outline</i>
+              </button>
+            </div>
+          </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let item of allItems">
+        <div class="card w-lg-25 w-md-50 w-sm-100 mx-2 my-2  card-hover">
+          <img class="card-img-top img-size"
+               [src]="item.itemImage"
+               [alt]="item.itemName" />
+               
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <h6 class="text-left">{{ item.itemName }}</h6>
+              </div>
+              <div class="col-6">
+                <p class="text-left">Description: {{ item.itemDescription }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h6 class="text-left">Price: {{ item.itemPrice }}</h6>
+              </div>
+            </div>
+            <div class="row reveal">
+              <div class="col-6  ">
+                <button 
+                  type="button" 
+                  class="btn btn-primary w-100">
+                  <i class="material-icons small align-middle">create</i>
+                  <small> Edit</small>
+                </button>
+              </div>
+
+              <!-- <div class="col-6 small">
+                <button 
+                  class="btn btn-outline-secondary " 
+                  (click)="editItem(item.itemId)">
+                  
+                  <i class="material-icons small align-middle">create</i>
+                  <small> Edit</small>
+                  
+                </button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div> <!-- for loop ends here-->
+
+    </div>
+  </div>

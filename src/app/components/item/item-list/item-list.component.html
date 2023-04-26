@@ -1,0 +1,224 @@
+
+<div class="container mt-3">
+
+    <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+    
+      <div class="row mt-3 ">
+        <div class="col-12">
+            <div class="input-group">
+                <input class="form-control border-secondary py-2" type="search"  name="seachrBar" id="searchBar" [(ngModel)]="searchBar" (search)="searchItems()">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button" (click)="searchItems()" >
+                      <i class="material-icons small align-middle">search </i>
+                    </button>
+                    <!-- <button class="btn btn-secondary" type="reset" (click)="resetSearchPage()">
+                      <i class="material-icons small align-middle">replay </i>
+                    </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      <div class="row mt-2 ">
+        <form class="form-inline" action="" #registerForm='ngForm'>
+          
+          <div class="row">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-4">
+            <div class="form-group">
+              <label for='FromPrice'>From:</label>
+              <input type='number' class="form-control " id="FromPrice" step="100" name="fromPrice"[(ngModel)]="fromPrice" min="0" placeholder="From Price: Rs. "
+                required />
+            </div>
+    
+          </div>
+          <!-- </div> -->
+    
+    
+          <!-- <div class="row"> -->
+          <div class="col-4">
+            <div class="form-group">
+              <label for='ToPrice'>To:</label>
+              <input type='number' class="form-control " id="ToPrice" step="100" name="toPrice" [(ngModel)]="toPrice" min="0" placeholder="To Price: Rs." required />
+            </div>
+    
+          </div>
+          <!-- </div> -->
+    
+    
+          <!-- <div class="row"> -->
+          <div class="col-2 mt-4">
+            <button type="button" class="btn btn-success" (click)='filterItems()' >Filter
+            </button>
+            <!-- disabled] = '!registerForm.valid' -->
+          </div>
+          
+          <div class="col-2 mt-4">
+            <button type="reset" class="btn btn-secondary" (click)="resetFilterPage()">Reset</button>
+          </div>
+    
+          </div>
+    
+        </form>
+      </div>
+    
+    
+    <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+    
+    
+    
+    
+    
+      <div class="row mt-5" *ngIf="!isfiltered && !isSearched">
+        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let item of allItems">
+          <div class="card w-lg-25 w-md-50 w-sm-100 mx-2 my-2  card-hover">
+            <img class="card-img-top img-size " [src]="item.itemImage" [alt]="item.itemName" />
+    
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h6 class="text-left">{{ item.itemName }}</h6>
+                </div>
+                <div class="col-6">
+                  <p class="text-left">Description: {{ item.itemDescription }}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h6 class="text-left">Price: {{ item.itemPrice }}</h6>
+                </div>
+              </div>
+              <div class="row reveal">
+                <div class="col-6 small ">
+                  <button class="btn btn-outline-primary" (click)="displayItemDetails(item.itemId)">
+                    <small>Details</small>
+                    <i class="material-icons small align-middle">more_vert </i>
+                    <!-- crop_free -->
+                    <!-- <span class="align-middle mx-3 "><small>Deta</small></span> -->
+                  </button>
+                </div>
+    
+                <div class="col-6 small">
+                  <button class="btn btn-outline-secondary " (click)="addToCart(item)">
+    
+                    <i class="material-icons small align-middle">add_shopping_cart</i>
+                    <small> Cart</small>
+                    <!-- <span class="align-middle mx-3 "><small>Cart</small></span> -->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- for loop ends here-->
+    
+      </div>
+    
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+    
+      <div class="row mt-5" *ngIf="isfiltered">
+        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let item of filteredItems">
+          <div class="card w-lg-25 w-md-50 w-sm-100 mx-2 my-2  card-hover">
+            <img class="card-img-top img-size " [src]="item.itemImage" [alt]="item.itemName" />
+    
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h6 class="text-left">{{ item.itemName }}</h6>
+                </div>
+                <div class="col-6">
+                  <p class="text-left">Description: {{ item.itemDescription }}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h6 class="text-left">Price: {{ item.itemPrice }}</h6>
+                </div>
+              </div>
+              <div class="row reveal">
+                <div class="col-6 small ">
+                  <button class="btn btn-outline-primary" (click)="displayItemDetails(item.itemId)">
+                    <small>Details</small>
+                    <i class="material-icons small align-middle">more_vert </i>
+                    <!-- crop_free -->
+                    <!-- <span class="align-middle mx-3 "><small>Deta</small></span> -->
+                  </button>
+                </div>
+    
+                <div class="col-6 small">
+                  <button class="btn btn-outline-secondary " (click)="addToCart(item)">
+    
+                    <i class="material-icons small align-middle">add_shopping_cart</i>
+                    <small> Cart</small>
+                    <!-- <span class="align-middle mx-3 "><small>Cart</small></span> -->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- for loop ends here-->
+    
+      </div>
+    
+    
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+      <!-- ================================================================================================================================== -->
+    
+      <div class="row mt-5" *ngIf="isSearched">
+        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let item of searchedItems">
+          <div class="card w-lg-25 w-md-50 w-sm-100 mx-2 my-2  card-hover">
+            <img class="card-img-top img-size " [src]="item.itemImage" [alt]="item.itemName" />
+    
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h6 class="text-left">{{ item.itemName }}</h6>
+                </div>
+                <div class="col-6">
+                  <p class="text-left">Description: {{ item.itemDescription }}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h6 class="text-left">Price: {{ item.itemPrice }}</h6>
+                </div>
+              </div>
+              <div class="row reveal">
+                <div class="col-6 small ">
+                  <button class="btn btn-outline-primary" (click)="displayItemDetails(item.itemId)">
+                    <small>Details</small>
+                    <i class="material-icons small align-middle">more_vert </i>
+                    <!-- crop_free -->
+                    <!-- <span class="align-middle mx-3 "><small>Deta</small></span> -->
+                  </button>
+                </div>
+    
+                <div class="col-6 small">
+                  <button class="btn btn-outline-secondary " (click)="addToCart(item)">
+    
+                    <i class="material-icons small align-middle">add_shopping_cart</i>
+                    <small> Cart</small>
+                    <!-- <span class="align-middle mx-3 "><small>Cart</small></span> -->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- for loop ends here-->
+    
+      </div>
+    
+    
+    
+    
+    </div>

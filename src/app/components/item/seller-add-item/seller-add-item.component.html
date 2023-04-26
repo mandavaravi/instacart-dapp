@@ -1,0 +1,202 @@
+
+<div class="container">
+    <div class="row m-5">
+		<div class="col">
+			<div class="card card-width ">
+				<div class="card-header font-weight-bold">
+					<h3>Add Item</h3>
+				</div>
+                <div class="card-body">
+                    <form action="" #registerForm = 'ngForm'>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+									<label for='Name'>Name:</label>
+									<div class="small text-danger font-weight-light " *ngIf="regName.errors?.['required'] && regName.touched">
+										Please Enter name
+									 </div> 
+									<input 
+										type='text' 
+										id='Name' 
+										class="form-control"
+										name="Name" 
+										#regName= "ngModel"  
+										[(ngModel)]='rName' 
+										required/>
+								</div> 
+							</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+									<label for='image'>Image Link:</label>
+									<div class="small text-danger font-weight-light " *ngIf="regimage.errors?.['required'] && regimage.touched">
+										Please provide link
+									 </div> 
+									<input 
+										type='text' 
+										id='image' 
+										class="form-control"
+										name="image" 
+										#regimage= "ngModel"  
+										[(ngModel)]='rImage' 
+										required/>
+								</div> 
+							</div>
+						</div>
+                              
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+									<label for='Price'>Price:</label>
+									<div class="small text-danger font-weight-light " *ngIf="regPrice.errors?.['required'] && regPrice.touched">
+										Please Enter Price
+									 </div> 
+									<input 
+										type='number' 
+										id='Price' 
+										class="form-control"
+										name="Price" 
+										#regPrice= "ngModel"  
+										[(ngModel)]='rPrice' 
+										required/>
+								</div> 
+							</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+									<label for='Stock'>Stock:</label>
+									<div class="small text-danger font-weight-light " *ngIf="regStock.errors?.['required'] && regStock.touched">
+										Please Enter Stock
+									 </div> 
+									<input 
+										type='number' 
+										id='Stock' 
+										class="form-control"
+										name="Stock" 
+										#regStock= "ngModel"  
+										[(ngModel)]='rStock' 
+										required/>
+								</div> 
+							</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+									<label for='Description'>Description:</label>
+									<div class="small text-danger font-weight-light " *ngIf="regDescription.errors?.['required'] && regDescription.touched">
+										Please Enter Description
+									 </div> 
+									<input 
+										type='text' 
+										id='Description' 
+										class="form-control"
+										name="Description" 
+										#regDescription= "ngModel"  
+										[(ngModel)]='rDescription' 
+										required/>
+								</div> 
+							</div>
+                        </div>
+                        
+                        <div class="row">
+
+							<div class="col">
+								<div class="form-group">
+									<label for='Category'>Category Id:</label>
+									<div class="small text-danger  font-weight-light"  *ngIf="regCategory.errors?.['required'] &&  regCategory.touched">
+										Please Select Category
+									 </div>  
+									 <select [(ngModel)]="rCategory" 
+									 		  name="category"
+											  #regCategory = "ngModel" 
+											  #device 
+											  id="Category" 
+											  class="form-control" 
+											  (change)="GetSubCategory(device.value)" 
+											  >
+										<option *ngFor="let cat of clist" value="{{cat.categoryId}}" >{{ cat.categoryId || cat.categoryName}}</option>   
+								   </select>
+                                    <!-- <input 
+										type='textarea'
+										class="form-control " 
+										id='Category' 
+										name="Category" 
+										#regCategory = "ngModel"
+										[(ngModel)]='rCategory'
+										required/> -->
+								</div>
+								 
+                            </div>
+
+
+
+							<div class="col">
+								<div class="form-group">
+									<label for='SubCategory'>SubCategory Id:</label>
+									<div class="small text-danger  font-weight-light"  *ngIf="regSubCategory.errors?.['required'] &&  regSubCategory.touched">
+										Please Enter SubCategory
+									 </div>
+									 <select [(ngModel)]="rSubCategory" name="subCategory" #regSubCategory ="ngModel" id="SubCategory" class="form-control">
+										<option *ngFor="let scat of sclist" value="{{scat.subCategoryId}}">{{ scat.subCategoryId || scat.subCategoryName}}</option>   
+								 	 </select>  
+                                    <!-- <input 
+										type='textarea'
+										class="form-control " 
+										id='SubCategory' 
+										name="SubCategory" 
+										#regSubCategory = "ngModel"
+										[(ngModel)]='rSubCategory'
+										required/> -->
+								</div>
+								 
+                            </div>
+                        </div>
+                        
+
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label for='Remarks'>Remarks:</label>
+									<div class="small text-danger  font-weight-light"  *ngIf="regRemarks.errors?.['required'] &&  regRemarks.touched">
+										Please Enter Remarks
+									 </div>  
+                                    <input 
+										type='text'
+										class="form-control " 
+										id='Remarks' 
+										name="Remarks" 
+										#regRemarks = "ngModel"
+										[(ngModel)]='rRemarks'
+										required/>
+								</div>
+								 
+                            </div>
+                        </div>
+                         
+                        
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" 
+										class="btn btn-success"
+										(click)='addItem()'
+										[disabled] = '!registerForm.valid'
+										>Register
+								</button>
+                            </div>
+							<div class="col">
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </div>
+
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
