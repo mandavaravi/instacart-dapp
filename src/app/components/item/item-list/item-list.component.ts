@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Item } from '../../item';
 import { Router } from '@angular/router';
 import { EmartService } from 'src/app/services/emart.service';
+import { TransferService } from 'src/app/services/transfer.service';
 
 @Component({
   selector: 'app-item-list',
@@ -19,7 +20,7 @@ export class ItemListComponent implements OnInit {
   toPrice: number;
   fromPrice: number;
   searchBar: string;
-  constructor(protected emartService: EmartService, protected router: Router) {
+  constructor(protected emartService: EmartService, protected router: Router, private transferService: TransferService) {
     this.filteredItems = [];
     this.fromPrice = 0;
     this.toPrice = 0;
@@ -44,6 +45,8 @@ export class ItemListComponent implements OnInit {
       this.emartService.setLocalItems(this.allItems);
     }
     );
+    console.log('soll :');
+    this.transferService.getAllItems();
 
   }
 

@@ -5,22 +5,17 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
-            "subCategory": "subCat-1",
-            "seller": {
-                "sellerId": 101
-            }
+            "quantity": 100,
+            "pricePerQuantity": 1000,
+            "categoryId": "subCat-1",
+            "seller": "0x50e712fA22332386105b9a85bda7ACae9Fa73a19"
         },
         {
             "itemId": 1,
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -31,9 +26,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -44,9 +37,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -57,9 +48,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -70,9 +59,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -83,9 +70,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -96,9 +81,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -109,9 +92,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -122,9 +103,7 @@
             "itemName": "1st item",
             "itemImage": "https://i.pinimg.com/originals/66/f7/72/66f77296282b5ab7c2780724802614c0.png",
             "itemPrice": 10,
-            "itemDescription": "Description goes here",
-            "itemRemarks": "Manfc Date: 12/12, Expiry Date: 12/12",
-            "itemStock": 100,
+            "quantity": 100,
             "subCategory": "subCat-1",
             "seller": {
                 "sellerId": 101
@@ -144,19 +123,19 @@
     "allUsersCarts": [
         {
             "userId": 0,
-            "cart" : []
+            "cart": []
         }
     ],
     "allUsersOrders": [
         {
             "userId": 0,
-            "orders" : []
+            "orders": []
         }
     ],
     "allretailersInvs": [
         {
             "retId": 0,
-            "inv" : []
+            "inv": []
         }
     ]
 }

@@ -19,7 +19,7 @@ export class TransferService {
     } else {
       if (typeof window.web3 !== 'undefined') {
         this.web3 = window.web3.currentProvider;
-      } else {
+      } else { 
         this.web3 = new
           Web3.providers.HttpProvider('http://localhost:7545');
       }
@@ -90,17 +90,18 @@ export class TransferService {
 
   transferEther(value: any) {
     const that = this;
-    console.log('transfer.service :: transferEther to: ' +
-      value.transferAddress + ', from: ' + that.account + ', amount: '
-      + value.amount);
+    // console.log('transfer.service :: transferEther to: ' +
+    //   value.transferAddress + ', from: ' + that.account + ', amount: '
+    //   + value.amount);
     return new Promise((resolve, reject) => {
-      console.log('transfer.service :: transferEther :: tokenAbi');
-      console.log(JSON.stringify(tokenAbi));
+      // console.log('transfer.service :: transferEther :: tokenAbi');
+      // console.log(JSON.stringify(tokenAbi));
+
       const contract = require('@truffle/contract');
       const transferContract = contract(tokenAbi);
       transferContract.setProvider(that.web3);
-      console.log('transfer.service :: transferEther :: transferContract');
-      console.log(transferContract);
+      // console.log('transfer.service :: transferEther :: transferContract');
+      // console.log(transferContract);
       transferContract.deployed().then(function (instance: any) {
         return instance.pay(
           value.transferAddress,
@@ -118,4 +119,35 @@ export class TransferService {
       });
     });
   }
+
+  getAllItems(){
+    console.log('all items ser');
+    const that = this;
+    // return new Promise((resolve, reject) => {
+
+    //   const contract = require('@truffle/contract');
+    //   const transferContract = contract(tokenAbi);
+    //   transferContract.setProvider(that.web3);
+      
+    //   transferContract.deployed().then(function (instance: any) {
+    //     return instance.getAllItems();
+    //   }).then(function (status: any) {
+    //     if (status) {
+    //       console.log("tra ser status : " + status);
+    //       return resolve({ status: true });
+    //     }
+    //   }).catch(function (error: any) {
+    //     console.log(error);
+    //     return reject('transfer.service error');
+    //   });
+    // });
+    
+      const contract = require('@truffle/contract');
+      const transferContract = contract(tokenAbi);
+    
+    const result = transferContract.methods.someViewMethod().call();
+    console.log(result);
+    return result;
+  }
+
 }  

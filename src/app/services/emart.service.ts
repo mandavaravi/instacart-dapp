@@ -38,7 +38,7 @@ export class EmartService {
 
   setLocalItems(itemsList: any) {
     this.allItems = itemsList;
-    console.log(this.allItems);
+    // console.log(this.allItems);
   }
   
   getItem(itemId: string):any{

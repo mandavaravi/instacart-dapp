@@ -14,7 +14,7 @@ export class SellerAddItemComponent implements OnInit {
   rImage = '';
   rPrice : number = 0;
   rStock : number = 0;
-  rDescription = '';
+  // rDescription = '';
   rSubCategory : any = null;
   rCategory: any = null;
   rRemarks = '';
@@ -53,9 +53,9 @@ export class SellerAddItemComponent implements OnInit {
       itemName : this.rName,
       itemImage : this.rImage,
       itemPrice : this.rPrice,
-      itemDescription : this.rDescription,
-      itemRemarks : this.rRemarks,
-      itemStock : this.rStock,
+      // itemDescription : this.rDescription,
+      // itemRemarks : this.rRemarks,
+      quantity : this.rStock,
       subCategory : subcat,
       seller : {sellerId : JSON.parse(localStorage.getItem("currentSeller")+"").sellerId}
     };

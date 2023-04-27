@@ -20,14 +20,15 @@
     "@angular/platform-browser": "^15.2.8",
     "@angular/platform-browser-dynamic": "^15.2.8",
     "@angular/router": "^15.2.8",
-    "@truffle/contract": "^4.6.20",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@truffle/contract": "^4.3.19",
     "crypto": "^1.0.1",
     "os": "^0.1.2",
     "path": "^0.12.7",
     "rxjs": "~7.8.0",
     "stream": "^0.0.2",
     "tslib": "^2.5.0",
-    "web3": "^1.9.0",
+    "web3": "^0.20.7",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@angular/compiler-cli": "^15.2.8",
     "@types/jasmine": "~4.3.1",
     "assert": "^2.0.0",
+    "crypto-browserify": "^3.12.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
@@ -45,11 +47,12 @@
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "stream-browserify": "^3.0.0",
-    "crypto-browserify": "^3.12.0",
     "typescript": "^4.9.5",
     "url": "^0.11.0"
   },
   "browser": {
-    "crypto": false
+    "crypto": false,
+    "https": false,
+    "http": false
   }
 }
